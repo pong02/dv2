@@ -1,27 +1,19 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
-    "height": 300,
     "title": { "text": "Wage, BigMac and Happiness" },
     "data": {
-        "url": "https://raw.githubusercontent.com/pong0202/dv2/main/data/barData.xlsx"
+        "url": "https://raw.githubusercontent.com/pong02/dv2/master/data/barData.csv"        
     },
-    "mark": "bar",
-    "encoding": {
-        "x": { "field": "Country", "type": "nominal", "title": "South East Asian countries" },
-        "y": { "field": "price", "type": "quantitative", "title": "USD" },
-        "color": { 
-            "field": "Score",
-            "type": "quantitative",
-            "scale": {
-                "type": "linear"
-            } 
-        },
-        "tooltip": [
-            { "type": "quantitative", "title": "Happiness Index", "field": "Score" },
-            { "type": "quantitative", "title": "Hourly Wages (USD)", "field": "Wage-USD" },
-            { "type": "quantitative", "title": "BigMac Price (USD)", "field": "price" }
-
-        ]
+    "repeat": {"layer": ["Wage-USD", "price"]},
+    "spec":{
+        "mark": "bar",
+        "encoding": {
+            "x": { "field": "Country", "type": "nominal", "title": "South East Asian countries" },
+            "y": { "field": {"repeat": "layer"}, "type": "quantitative", "title": "USD" },
+            "color": {"datum": {"repeat": "layer"}, "title": "Gross"}
+        }
+    },
+    "config": {
+        "mark": {"invalid": null}
     }
 }

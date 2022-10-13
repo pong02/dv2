@@ -16,7 +16,7 @@
     <div class="container">
         <h1>Does the minimum wage and price of a Big Mac in a country affect the people's happiness? </h1>
         <div>
-            <div class="bar-container">
+            <div id="bar-container">
             <!--https://www.minimum-wage.org/international/singapore-->
             <!--https://wageindicator.org/ for missing countries-->
             </div>
@@ -32,30 +32,30 @@
 
 
     <script type="text/javascript">
-        var wageJson = "js/happyWage.vg.json";
-        vegaEmbed('#bar-container', happyJson).then(function(result) {
+        var wageJson = "js/wage.vg.json";
+        vegaEmbed('#bar-container', wageJson).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
 
-        var mapJson = "js/map.vg.json";
-        vegaEmbed('#map-container', mapJson).then(function(result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
+        // var mapJson = "js/map.vg.json";
+        // vegaEmbed('#map-container', mapJson).then(function(result) {
+        //     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        // }).catch(console.error);
 
-        var borgirsJson = "js/borgir.vg.json";
-        vegaEmbed('#picto-container', borgirsJson).then(function(result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
+        // var borgirsJson = "js/borgir.vg.json";
+        // vegaEmbed('#picto-container', borgirsJson).then(function(result) {
+        //     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        // }).catch(console.error);
 
-        var priceJson = "js/price.vg.json";
-        vegaEmbed('#borgirPrice', priceJson).then(function(result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
+        // var priceJson = "js/price.vg.json";
+        // vegaEmbed('#borgirPrice', priceJson).then(function(result) {
+        //     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        // }).catch(console.error);
 
-        var valueJson = "js/value.vg.json";
-        vegaEmbed('#borgirValue', valueJson).then(function(result) {
-            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
+        // var valueJson = "js/value.vg.json";
+        // vegaEmbed('#borgirValue', valueJson).then(function(result) {
+        //     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        // }).catch(console.error);
     </script>
 
 </body>
