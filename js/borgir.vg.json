@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 850,
+    "height": 200,
+    "data": {
+        "url": "https://raw.githubusercontent.com/pong02/dv2/master/data/borgirsInADay.json"
+    },
+
+    "transform": [{
+            "calculate": "{'borgir': '🍔'}[datum.Symbol]",
+            "as": "emoji"
+        }
+    ],
+
+    "mark": { "type": "text", "baseline": "middle" },
+
+    "encoding": {
+        "row": { "field": "Country", "header": { "title": "" } },
+        "text": { "field": "emoji", "type": "nominal" },
+        "size": { "value": 30 }
+    }
+
+}
