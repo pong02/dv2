@@ -25,7 +25,7 @@
             "x": {
                 "field": "Country",
                 "type": "nominal",
-                "title": "South East Asian countries",
+                "title": null,
                 "axis": {
                     "labelOffset": 2
                 }
@@ -45,7 +45,7 @@
                         "field": "Wage-USD",
                         "type": "quantitative",
                         "axis": {
-                            "title": null,
+                            "title": "USD",
                             "ticks": false
                         }
                     }
@@ -63,7 +63,7 @@
                         "field": "price",
                         "type": "quantitative",
                         "axis": {
-                            "title": null,
+                            "title": "USD",
                             "ticks": false
                         }
                     }

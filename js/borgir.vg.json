@@ -1,7 +1,22 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Number of BigMacs affordable after 8 hours of work"
+    },
+    "config": {
+        "style": {
+            "cell": {
+              "stroke": "transparent"
+            }
+          },
+        "mark": {
+            "invalid": null
+        },
+        "padding": {
+            "left": 175
+        }
+    },
     "width": 850,
-    "height": 200,
     "data": {
         "url": "https://raw.githubusercontent.com/pong02/dv2/master/data/borgirsInADay.json"
     },
@@ -9,13 +24,15 @@
     "transform": [{
             "calculate": "{'borgir': '🍔'}[datum.Symbol]",
             "as": "emoji"
-        }
+        },
+        { "window": [{ "op": "count", "as": "count" }], "groupby": ["Country", "Symbol"] }
     ],
 
-    "mark": { "type": "text", "baseline": "middle" },
+    "mark": { "type": "text" },
 
     "encoding": {
-        "row": { "field": "Country", "header": { "title": "" } },
+        "x": { "field": "count", "type": "ordinal", "axis":null},
+        "row": { "field": "Country", "header": {"title": null} },
         "text": { "field": "emoji", "type": "nominal" },
         "size": { "value": 30 }
     }
