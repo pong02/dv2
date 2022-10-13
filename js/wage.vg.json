@@ -4,7 +4,7 @@
     "height": 300,
     "title": { "text": "Wage, BigMac and Happiness" },
     "data": {
-        "url": "barData"
+        "url": "https://raw.githubusercontent.com/pong0202/dv2/main/data/barData.xlsx"
     },
     "mark": "bar",
     "encoding": {
