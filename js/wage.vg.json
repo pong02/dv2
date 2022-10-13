@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 300,
+    "title": { "text": "Wage, BigMac and Happiness" },
+    "data": {
+        "url": "barData"
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": { "field": "Country", "type": "nominal", "title": "South East Asian countries" },
+        "y": { "field": "price", "type": "quantitative", "title": "USD" },
+        "color": { 
+            "field": "Score",
+            "type": "quantitative",
+            "scale": {
+                "type": "linear"
+            } 
+        },
+        "tooltip": [
+            { "type": "quantitative", "title": "Happiness Index", "field": "Score" },
+            { "type": "quantitative", "title": "Hourly Wages (USD)", "field": "Wage-USD" },
+            { "type": "quantitative", "title": "BigMac Price (USD)", "field": "price" }
+
+        ]
+    }
+}

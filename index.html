@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Data Visualisation 2 </title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Does the minimum wage and price of a Big Mac in a country affect the people's happiness? </h1>
+        <div>
+            <div class="bar-container">
+            <!--https://www.minimum-wage.org/international/singapore-->
+            <!--https://wageindicator.org/ for missing countries-->
+            </div>
+            <div id="map-container"></div>
+            <div id="picto-container">Or maybe isotype to just compare all countries</div>
+            <div id="waffle-container" style="display:flex">
+                <div id="borgirPrice"></div>
+                <div id="borgirValue"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+        var wageJson = "js/happyWage.vg.json";
+        vegaEmbed('#bar-container', happyJson).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var mapJson = "js/map.vg.json";
+        vegaEmbed('#map-container', mapJson).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var borgirsJson = "js/borgir.vg.json";
+        vegaEmbed('#picto-container', borgirsJson).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var priceJson = "js/price.vg.json";
+        vegaEmbed('#borgirPrice', priceJson).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var valueJson = "js/value.vg.json";
+        vegaEmbed('#borgirValue', valueJson).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    </script>
+
+</body>
+
+</html>
