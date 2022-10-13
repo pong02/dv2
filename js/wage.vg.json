@@ -1,19 +1,95 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": { "text": "Wage, BigMac and Happiness" },
-    "data": {
-        "url": "https://raw.githubusercontent.com/pong02/dv2/master/data/barData.csv"        
+    "title": {
+        "text": "Wage, BigMac and Happiness"
     },
-    "repeat": {"layer": ["Wage-USD", "price"]},
-    "spec":{
-        "mark": "bar",
-        "encoding": {
-            "x": { "field": "Country", "type": "nominal", "title": "South East Asian countries" },
-            "y": { "field": {"repeat": "layer"}, "type": "quantitative", "title": "USD" },
-            "color": {"datum": {"repeat": "layer"}, "title": "Gross"}
-        }
+    "data": {
+        "url": "https://raw.githubusercontent.com/pong02/dv2/master/data/barData.csv"
     },
     "config": {
-        "mark": {"invalid": null}
+        "mark": {
+            "invalid": null
+        },
+        "padding": {
+            "left": 175
+        }
+    },
+    "repeat": {
+        "layer": [
+            "Wage-USD",
+            "price"
+        ]
+    },
+    "spec": {
+        "encoding": {
+            "x": {
+                "field": "Country",
+                "type": "nominal",
+                "title": "South East Asian countries",
+                "axis": {
+                    "labelOffset": 2
+                }
+            }
+        },
+        "width":850,
+        "layer": [
+            {
+                "mark": {
+                    "type": "bar",
+                    "xOffset": 15,
+                    "size": 30,
+                    "color": "#DA291C"
+                },
+                "encoding": {
+                    "y": {
+                        "field": "Wage-USD",
+                        "type": "quantitative",
+                        "axis": {
+                            "title": null,
+                            "ticks": false
+                        }
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "bar",
+                    "size": 30,
+                    "xOffset": -15,
+                    "color": "#FFC72C"
+                },
+                "encoding": {
+                    "y": {
+                        "field": "price",
+                        "type": "quantitative",
+                        "axis": {
+                            "title": null,
+                            "ticks": false
+                        }
+                    }
+                }
+            },
+            {
+                "mark": {
+                    "type": "text"
+                },
+                "encoding": {
+                    "fill": {
+                        "field": "Legend",
+                        "scale": {
+                            "range": [
+                                "#DA291C",
+                                "#FFC72C"
+                            ]
+                        },
+                        "legend": {
+                            "title": "Legend",
+                            "symbolType": "square",
+                            "orient": "bottom"
+                        }
+                    }
+                }
+            }
+        ]
     }
 }
