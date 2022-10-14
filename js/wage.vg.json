@@ -22,14 +22,16 @@
     },
     "spec": {
         "encoding": {
+            "y": {
+                "type": "quantitative"
+            },
             "x": {
-                "field": "Country",
+                "type": "nominal"
+            },
+            "color": {
                 "type": "nominal",
-                "title": null,
-                "axis": {
-                    "labelOffset": 2
-                }
-            }
+                "scale": {"domain": ["Hourly wage", "BigMac price"], "range": ["#DA291C", "#FFC72C"]}
+              }
         },
         "width":850,
         "layer": [
@@ -37,10 +39,17 @@
                 "mark": {
                     "type": "bar",
                     "xOffset": 15,
-                    "size": 30,
-                    "color": "#DA291C"
+                    "size": 30
                 },
                 "encoding": {
+                    "x": {
+                        "field": "Country",
+                        "type": "nominal",
+                        "title": null,
+                        "axis": {
+                            "labelOffset": 2
+                        }
+                    },
                     "y": {
                         "field": "Wage-USD",
                         "type": "quantitative",
@@ -48,17 +57,25 @@
                             "title": "USD",
                             "ticks": false
                         }
-                    }
+                    },
+                    "color": {"datum": "Hourly wage"}
                 }
             },
             {
                 "mark": {
                     "type": "bar",
                     "size": 30,
-                    "xOffset": -15,
-                    "color": "#FFC72C"
+                    "xOffset": -15
                 },
                 "encoding": {
+                    "x": {
+                        "field": "Country",
+                        "type": "nominal",
+                        "title": null,
+                        "axis": {
+                            "labelOffset": 2
+                        }
+                    },
                     "y": {
                         "field": "price",
                         "type": "quantitative",
@@ -66,28 +83,8 @@
                             "title": "USD",
                             "ticks": false
                         }
-                    }
-                }
-            },
-            {
-                "mark": {
-                    "type": "text"
-                },
-                "encoding": {
-                    "fill": {
-                        "field": "Legend",
-                        "scale": {
-                            "range": [
-                                "#DA291C",
-                                "#FFC72C"
-                            ]
-                        },
-                        "legend": {
-                            "title": "Legend",
-                            "symbolType": "square",
-                            "orient": "bottom"
-                        }
-                    }
+                    },
+                    "color": {"datum": "BigMac price"}
                 }
             }
         ]
