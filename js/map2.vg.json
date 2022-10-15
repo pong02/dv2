@@ -55,7 +55,7 @@
           "from": "source_2",
           "key": "Country",
           "fields": ["properties.NAME"],
-          "values": ["Score", "borgirHours_start","borgirHours_end"]
+          "values": ["Score", "borgirHours_start","borgirHours_end","borgirHours","base"]
         }
       ]
     },
@@ -139,6 +139,31 @@
       "transform": [{"type": "geoshape", "projection": "projection"}]
     },
     {
+      "name": "clockface",
+      "type": "arc",
+      "clip": true,
+      "style": ["arc"],
+      "from": {"data": "data_2"},
+      "encode": {
+        "update": {
+          "radius": {"value": 0},
+          "tooltip": {"signal": ""},
+          "fill": {"value": "#ffffff"},
+          "description": {
+            "signal": "\"borgirHours: \" + (format(datum[\"borgirHours\"], \"\")) + \"; Longitude (average): \" + (format(datum[\"Longitude (average)\"], \"\")) + \"; Latitude (average): \" + (format(datum[\"Latitude (average)\"], \"\"))"
+          },
+          "x": {"field": "layer_3_x"},
+          "y": {"field": "layer_3_y"},
+          "outerRadius": {"value": 35},
+          "innerRadius": {"value": 0},
+          "startAngle": {"scale": "theta", "field": "borgirHours_start"},
+          "endAngle": {"scale": "theta", "field": "base"},
+          "strokeWidth" :{"value":2.5},
+          "stroke" :{"value": "#000000"}
+        }
+      }
+    },
+    {
       "name": "layer_3_marks",
       "type": "arc",
       "clip": true,
@@ -147,18 +172,34 @@
       "encode": {
         "update": {
           "radius": {"value": 0},
-          "tooltip": {"signal": "datum"},
-          "fill": {"value": "#4c78a8"},
+          "tooltip": {"signal": ""},
+          "fill": {"value": "#aa4499"},
           "description": {
             "signal": "\"borgirHours: \" + (format(datum[\"borgirHours\"], \"\")) + \"; Longitude (average): \" + (format(datum[\"Longitude (average)\"], \"\")) + \"; Latitude (average): \" + (format(datum[\"Latitude (average)\"], \"\"))"
           },
           "x": {"field": "layer_3_x"},
           "y": {"field": "layer_3_y"},
-          "outerRadius": {"value": 0},
-          "innerRadius": {"value": 20},
+          "outerRadius": {"value": 40},
+          "innerRadius": {"value": 0},
           "startAngle": {"scale": "theta", "field": "borgirHours_start"},
           "endAngle": {"scale": "theta", "field": "borgirHours_end"}
         }
+      }
+    },
+    {
+      "name":"countryname",
+      "type": "text",
+      "style":[""], 
+      "from": {"data": "data_2"},
+      "encode": {
+        "enter": {
+          "text": {"field":"Country"},
+          "x": {"field": "layer_3_x"},
+          "y": {"field": "layer_3_y"}
+        },
+        "fontSize":{"value":30},
+        "fontWeight":{"value":"bold"},
+        "font":{"value":"sans-serif"}
       }
     }
   ],
