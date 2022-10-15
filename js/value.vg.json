@@ -9,9 +9,9 @@
       "theta": {"field": "local_price", "type": "quantitative"},
       "color": {"field": "Country", "type": "nominal"}
     },
+    "transform": [{"filter":{"param": "focus","empty":false}}],
     "params": [{
         "name": "focus",
-        "value": [145, -37.95],
         "bind": {
           "input": "select",
           "options": ["China","Hong Kong","Indonesia","India","Japan","South Korea","Malaysia","Pakistan","Philippines","Singapore","Thailand","Taiwan"],
