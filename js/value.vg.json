@@ -6,8 +6,7 @@
     },
     "mark": "arc",
     "encoding": {
-      "theta": {"field": "local_price", "type": "quantitative"},
-      "color": {"field": "Country", "type": "nominal"}
+      "theta": {"field": "local_price", "type": "quantitative"}
     },
     "transform": [{"filter":{"param": "focus","empty":false}}],
     "params": [{
