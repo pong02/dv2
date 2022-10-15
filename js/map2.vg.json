@@ -154,12 +154,12 @@
           },
           "x": {"field": "layer_3_x"},
           "y": {"field": "layer_3_y"},
-          "outerRadius": {"value": 35},
+          "outerRadius": {"value": 30},
           "innerRadius": {"value": 0},
           "startAngle": {"scale": "theta", "field": "borgirHours_start"},
           "endAngle": {"scale": "theta", "field": "base"},
-          "strokeWidth" :{"value":2.5},
-          "stroke" :{"value": "#000000"}
+          "strokeWidth" :{"value":1.5},
+          "stroke" :{"value": "#696969"}
         }
       }
     },
@@ -195,11 +195,13 @@
         "enter": {
           "text": {"field":"Country"},
           "x": {"field": "layer_3_x"},
-          "y": {"field": "layer_3_y"}
-        },
-        "fontSize":{"value":30},
-        "fontWeight":{"value":"bold"},
-        "font":{"value":"sans-serif"}
+          "y": {"field": "layer_3_y"},
+          "fontSize":{"value":15},
+          "fontWeight":{"value":"bold"},
+          "font":{"value":"sans-serif"},
+          "dx":{"value":-20},
+          "dy":{"value":35}
+        }
       }
     }
   ],
