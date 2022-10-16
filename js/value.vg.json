@@ -4,18 +4,38 @@
     "data": {
       "url": "https://raw.githubusercontent.com/pong02/dv2/master/data/waffleData.csv"
     },
-    "mark": "arc",
+    "transform": [
+        {"filter":"datum.name == focus"},
+        {
+            "calculate": "if(round(datum.valuation * 100)==0,null,round(datum.valuation * 100))",
+            "as": "percent"
+        }     
+    ],
+    "layer" :[
+        {"mark": {"type":"arc","tooltip":true}},
+        {"mark": {"type": "text",
+          "fontSize":15,
+          "fontWeight":"bold",
+          "font":"sans-serif"
+        },
+        "encoding": {
+          "text": {"field": "percent", "type": "quantitative"},
+          "color": {"value": "#27251F"}
+        }}
+    ],
+    
     "encoding": {
-      "theta": {"field": "local_price", "type": "quantitative"}
+      "theta": {"field": "USDPRICE", "type": "quantitative", "title":"BigMac price"},
+      "color": {"field": "category", "type": "nominal", "title":"Pricing"}
     },
-    "transform": [{"filter":{"param": "focus","empty":false}}],
     "params": [{
+        "value":"China",
         "name": "focus",
         "bind": {
-          "input": "select",
-          "options": ["China","Hong Kong","Indonesia","India","Japan","South Korea","Malaysia","Pakistan","Philippines","Singapore","Thailand","Taiwan"],
-          "labels": ["China","Hong Kong","Indonesia","India","Japan","South Korea","Malaysia","Pakistan","Philippines","Singapore","Thailand","Taiwan"],
-          "name": "Country: "
+            "input": "select",
+            "options": ["China","Hong Kong","Indonesia","India","Japan","South Korea","Malaysia","Pakistan","Philippines","Singapore","Thailand","Taiwan"],
+            "labels": ["China","Hong Kong","Indonesia","India","Japan","South Korea","Malaysia","Pakistan","Philippines","Singapore","Thailand","Taiwan"],
+            "name": "Country: "
         }
       }]
   }

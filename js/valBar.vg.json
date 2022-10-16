@@ -1,0 +1,48 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Valuation of currencies against USD",
+    "data": {
+      "url": "https://raw.githubusercontent.com/pong02/dv2/master/data/waffleData.csv"
+    },
+    "transform": [
+        {
+            "calculate": "round(datum.valuation * 100)",
+            "as": "percent"
+        }
+    ],
+        
+    "encoding": {
+      "y": {
+        "field": "Currency",
+        "type": "nominal",
+        "axis": {
+          "domain": false,
+          "ticks": false,
+          "labelAngle": 0,
+          "labelPadding": 4
+        }
+      },
+      "x": {
+        "field": "percent",
+        "type": "quantitative",
+        "scale": {"padding": 20},
+        "axis": {
+          "gridColor": {
+            "condition": {"test": "datum.value === 0", "value": "black"},
+            "value": "#ddd"
+          }
+        }
+      }
+    },
+    "layer": [
+      {"mark": "bar"},
+      {
+        "mark": {
+          "type": "text",
+          "align": {"expr": "datum.percent < 0 ? 'right' : 'left'"},
+          "dx": {"expr": "datum.percent < 0 ? -2 : 2"}
+        },
+        "encoding": {"text": {"field": "percent", "type": "quantitative"}}
+      }
+    ]
+  }

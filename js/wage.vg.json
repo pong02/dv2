@@ -9,9 +9,6 @@
     "config": {
         "mark": {
             "invalid": null
-        },
-        "padding": {
-            "left": 175
         }
     },
     "repeat": {
