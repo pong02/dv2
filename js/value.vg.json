@@ -7,7 +7,7 @@
     "transform": [
         {"filter":"datum.name == focus"},
         {
-            "calculate": "if(round(datum.valuation * 100)==0,null,round(datum.valuation * 100))",
+            "calculate": "if(datum.valuation==0,null,round(datum.valuation * 100))",
             "as": "percent"
         }     
     ],

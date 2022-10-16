@@ -23,6 +23,7 @@
         }
       },
       "x": {
+        "title":"Valuation against USD",
         "field": "percent",
         "type": "quantitative",
         "scale": {"padding": 20},
