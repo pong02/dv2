@@ -1,8 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-        "text": "Wage, BigMac and Happiness"
-    },
+    "description": "Wage, BigMac and Happiness",
     "data": {
         "url": "https://raw.githubusercontent.com/pong02/dv2/master/data/barData.csv"
     },

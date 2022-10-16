@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "A simple pie chart with embedded data.",
+    "description": "piechart for valuation FOR a single country",
     "data": {
       "url": "https://raw.githubusercontent.com/pong02/dv2/master/data/waffleData.csv"
     },
@@ -18,12 +18,15 @@
             "type": "text",
             "fontSize":15,
             "fontWeight":"bold",
-            "font":"sans-serif",
-            "invalid": "filter"
+            "font":"sans-serif"
             },
             "encoding": {
             "text": {"field": "percent", "type": "nominal"},
-            "color": {"value": "#27251F"}
+            "color": {"value": "#27251F"},
+            "opacity":{
+                "condition": {"test": "datum.valuation == 'N/A'","value":0},
+                "value": 1
+              }
             }
         }
     ],

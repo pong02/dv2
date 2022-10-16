@@ -3,10 +3,7 @@
   "background": "white",
   "width": 1000,
   "height": 700,
-  "title": {
-    "text": "Happiness Map with hours worked to afford a single BigMac",
-    "frame": "group"
-  },
+  "description": "Happiness Map with hours worked to afford a single BigMac",
   "data": [
     {
       "name": "source_0",

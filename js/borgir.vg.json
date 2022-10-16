@@ -1,8 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-        "text": "Number of BigMacs affordable after 8 hours of work"
-    },
+    "description": "Number of BigMacs affordable after 8 hours of work",
     "config": {
         "style": {
             "cell": {
