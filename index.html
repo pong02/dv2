@@ -14,21 +14,94 @@
 
 <body>
     <div class="container">
-        <h1>Does the minimum wage and price of a Big Mac in a country affect the people's happiness? </h1>
+        <hr class="solid">
+        <div id="banner-container"  style="display:flex">
+            <div id="logo"style="display:flex">
+                <img src="flag.png">
+            </div>
+            <div>
+                <h1 id="banner-text">Minimum wage, BigMac and Happiness</h1>
+                <div id="subtitle" style="display:flex">
+                    <p id="banner-text">South East Asia, 2020</p>
+                    <p id="banner-text">created by Pong Zhong Zhe</p>
+                </div>
+            </div>
+            <div id="logo24h"style="display:flex">
+                <img src="24h.png">
+            </div>
+        </div>
+        
+        <hr class="solid">
         <div>
-            <div id="bar-container">
+
+            <!-- WAGE BAR CHART -->
+            <div class="centerBox" style="display:flex">
+                <h3 class="chart-titles">Minimum hourly wage vs BigMac price</h3>
+            </div>
+            <div id="bar-container" class="centerBox" style="display:flex">
             <!--https://www.minimum-wage.org/international/singapore-->
             <!--https://wageindicator.org/ for missing countries-->
             </div>
-            <div id="map-container"></div>
-            <div id="picto-container"></div>
-            <div id="smolchart-container" style="display:flex">
+            <div class="centerBox">
+                <div class="annotationBox">
+                    <p>The first thing we can notice from this chart is that Singapore has a minimum wage of 0. This is actually because Singapore has no minimum wage regulations.</p>
+                    <p>Besides, it is also noticeable that BigMac prices do not actually scale to the minimum wage, and even stays prices at around 2-4 USD converted.</p>
+                </div>  
+            </div>
+
+            <hr class="soft">
+
+            <!-- MAP -->
+            <div class="centerBox" style="display:flex">
+                <h3 class="chart-titles">Countries and minimum hours worked for 1 BigMac</h3>
+            </div>
+            <div id="map-container" class="centerBox" style="display:flex"></div>
+            <div class="centerBox">
+                <div class="annotationBox">
+                    <p>The average hours to earn enough for 1 BigMac is around 2 hours, with India and Pakistan being the biggest outlier with 7 and 4 hours respectively.</p>
+                    <p>This observation above tells us that the price of BigMacs or the minimum wage do not necessarily affect the Happiness Score of the country as Pakistan </p>
+                    <p>and India who has very similar wages and BigMac prices have very different Happiness Scores</p>
+                </div>
+            </div>
+
+            <hr class="soft">
+
+            <!-- BURGER PICTO -->
+            <div class="centerBox" style="display:flex">
+                <h3 class="chart-titles">BigMacs affordable after 8 hour shift</h3>
+            </div>
+            <div id="picto-container" class="centerBox" style="display:flex"></div>
+            <div class="centerBox">
+                <div class="annotationBox">
+                    <p>As mentioned above, we can indeed see that India and Pakistan has the lowest amount of BigMac affordable with an 8 hour shift worked</p>
+                    <p>The most BigMacs affordable is held by South Korea, who only has to work 24 minutes to earn enough for a BigMac!</p>
+                </div>
+            </div>
+
+            <hr class="soft">
+            
+            <!-- MINI GRAPHS -->
+            <div class="centerBox" style="display:flex">
+                <h3 class="chart-titles">Approximated valuation of local currency against USD</h3>
+            </div>
+            <div id="smolchart-container" class="centerBox" style="display:flex">
                 <div id="pie-container"></div>
                 <div id="bibar-container"></div>
             </div>
+            <div class="centerBox">
+                <div class="annotationBox">
+                    <p>These 2 charts are actually a basic view on The Economist's Big Mac Index, which is invented as a layman's way to approximate currency valuation based</p>
+                    <p>off of purchasing power parity between countries, which uses BigMac as the "identical basket of goods"</p>
+                    <p>Here, we can see that Singapore has the least undervalued currency whereas Malaysia and India has the highest undervaluation at 51%</p>
+                </div>
+            </div>
         </div>
     </div>
-
+    <hr class="solid">
+    <footer id="footer" style="display:flex">  
+        <p>© All Rights Reserved by Pong Zhong Zhe </p>
+    </footer>  
+    <hr class="solid">
 
 
     <script type="text/javascript">
