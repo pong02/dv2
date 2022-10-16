@@ -8,21 +8,24 @@
         {"filter":"datum.name == focus"},
         {
             
-            "calculate": "if(isValid(datum.valuation),round(datum.valuation * 100),'_')",
+            "calculate": "round(datum.valuation * 100)",
             "as": "percent"
         }   
     ],
     "layer" :[
         {"mark": {"type":"arc","tooltip":true}},
-        {"mark": {"type": "text",
-          "fontSize":15,
-          "fontWeight":"bold",
-          "font":"sans-serif"
-        },
-        "encoding": {
-          "text": {"field": "percent", "type": "nominal"},
-          "color": {"value": "#27251F"}
-        }}
+        {"mark": {
+            "type": "text",
+            "fontSize":15,
+            "fontWeight":"bold",
+            "font":"sans-serif",
+            "invalid": "filter"
+            },
+            "encoding": {
+            "text": {"field": "percent", "type": "nominal"},
+            "color": {"value": "#27251F"}
+            }
+        }
     ],
     "encoding": {
       "theta": {"field": "USDPRICE", "type": "quantitative", "title":"BigMac price"},
