@@ -7,9 +7,15 @@
     "transform": [
         {"filter":"datum.name == focus"},
         {
-            "calculate": "if(datum.valuation==0,null,round(datum.valuation * 100))",
+            "calculate": "if(isString(datum.valuation),null,round(datum.valuation * 100))",
             "as": "percent"
-        }     
+        },
+        {"aggregate": [{
+            "op": "sum",
+            "field": "percent",
+            "as": "new_val"
+           }
+        ]}
     ],
     "layer" :[
         {"mark": {"type":"arc","tooltip":true}},
