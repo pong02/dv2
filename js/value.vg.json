@@ -7,9 +7,10 @@
     "transform": [
         {"filter":"datum.name == focus"},
         {
-            "calculate": "if(isString(datum.valuation),null,round(datum.valuation * 100))",
+            
+            "calculate": "if(isValid(datum.valuation),round(datum.valuation * 100),'_')",
             "as": "percent"
-        }
+        }   
     ],
     "layer" :[
         {"mark": {"type":"arc","tooltip":true}},
@@ -19,11 +20,10 @@
           "font":"sans-serif"
         },
         "encoding": {
-          "text": {"field": "percent", "type": "quantitative"},
+          "text": {"field": "percent", "type": "nominal"},
           "color": {"value": "#27251F"}
         }}
     ],
-    
     "encoding": {
       "theta": {"field": "USDPRICE", "type": "quantitative", "title":"BigMac price"},
       "color": {"field": "category", "type": "nominal", "title":"Pricing"}
@@ -37,5 +37,10 @@
             "labels": ["China","Hong Kong","Indonesia","India","Japan","South Korea","Malaysia","Pakistan","Philippines","Singapore","Thailand","Taiwan"],
             "name": "Country: "
         }
-      }]
+      },
+      {
+        "value":"USD Price",
+        "name": "filterNA"
+      }
+    ]
   }

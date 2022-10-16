@@ -23,7 +23,7 @@
         }
       },
       "x": {
-        "title":"Valuation against USD",
+        "title":"Valuation against USD (%)",
         "field": "percent",
         "type": "quantitative",
         "scale": {"padding": 20},
@@ -36,7 +36,10 @@
       }
     },
     "layer": [
-      {"mark": "bar"},
+      {"mark": {
+        "type":"bar",
+        "fill":{"expr":"datum.percent < 0 ? '#DA291C' : '#FFC72C'"}
+        }},
       {
         "mark": {
           "type": "text",
