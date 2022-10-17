@@ -221,7 +221,7 @@
       "format": ".2s",
       "title": "Happiness Score",
       "fill": "color",
-      "gradientLength": {"signal": "clamp(height, 64, 200)"}
+      "gradientLength": 670
     }
   ]
 }
